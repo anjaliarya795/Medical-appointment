@@ -1,187 +1,70 @@
 import React from 'react';
+import Input from '../input_field/text_input'
+import Select from '../input_field/select_field'
+import Radio from '../input_field/radio_input'
+
 
 const Form = () => {
+    const options = [
+        { value: 'this_week', label: 'This Week' },
+        { value: 'next_week', label: 'Next Week' },
+        { value: 'this_month', label: 'This Month' },
+        { value: 'next_month', label: 'Next Month' },
+
+      ];
     return (
         <div>
-            <form action="" className="py-40 bg-gray-100  bg-opacity-50 w-11/12 mx-auto">
-                <div className="mx-auto container max-w-2xl">
+            <form action="" id="appointment_form" className="py-28 bg-opacity-80 w-full mx-auto bg-white">
+                <div className="mx-auto container px-10 ">
 
-                    <div className="bg-white space-y-10 rounded-xl shadow-2xl shadow-teal-950 py-5">
-                
+                    <div className=" space-y-10 rounded-xl bg-white lg:w-8/12 mx-auto ">
+                    <div className='flex flex-col p-4'>
 
-                        <div className="md:inline-flex  w-full p-4 text-gray-500 items-center">
-
-
-                            <div className="md:w-6/12 md:px-5 w-full mx-auto max-w-sm space-y-5">
-                                <div>
-                                    <label className="text-sm text-gray-400">Full name</label>
-                                    <div className="w-full inline-flex border">
-                                        
-                                        <input
-                                            required
-                                            type="text"
-                                            className="w-full  p-2"
-                                            placeholder="Anjali Arya"
-                                        />
-                                    </div>
-                                </div>
+                        <div className="md:inline-flex  w-full  text-gray-500 items-center ">
 
 
+                            <div className="lg:w-6/12 md:px-5 w-full mx-auto  space-y-5">
+                                    
+                                <Input id={"name"} labelName={"Name"} type={"text"} placeholder={"Anjali Arya"}/>
 
-                                <div>
-                                    <label className="text-sm text-gray-400">Email</label>
-                                    <div className="w-full inline-flex border">
-                                        
-                                        <input
-                                            type="email"
-                                            className="w-full  p-2"
-                                            placeholder="anjalisinha498@gmail.com"
-                                        />
-                                    </div>
-                                </div>
+                                <Input id={"email"} labelName={"Email"} type={"email"} placeholder={"anjalisinha498@gmail.com"}/>
 
+                                <Input id={"tel"} labelName={"Phone no."}  type={"tel"} placeholder={"9898989898"}/>
 
+                                <Input id={"age"} labelName={"Age"} type={"tel"} placeholder={"21"}/>
 
-                                <div>
-                                    <label className="text-sm text-gray-400">Age</label>
-                                    <div className="w-full inline-flex border">
-                                        
-                                        <input
-                                            required
-                                            type="number"
-                                            className="w-full p-2"
-                                            placeholder="21"
-                                        />
-                                    </div>
-                                </div>
+                                <Radio id={"gender"} labelName={"Gender"} />
 
-
-
-                                <div>
-                                    <label className="text-sm text-gray-400">Mobile</label>
-                                    <div className="w-full inline-flex border">
-                                        
-                                        <input
-                                            required
-                                            type="tel"
-                                            className="w-full  p-2"
-                                            placeholder="9999999999"
-                                        />
-                                    </div>
-                                </div>
-
-
-
-
-                                <div>
-                                    <label className="text-sm text-gray-400">Gender</label>
-                                    <div className="w-full inline-flex border">
-                                        
-                                        <div className="w-full px-2 flex py-2.5 ">
-                                            <div className="w-4/12 px-1  flex ">
-                                                <input type="radio" className="w-6/12" id="Male" value="Male" />
-                                                <label for="Male" className="text-sm text-teal-950 " >Male</label>
-
-                                            </div>
-                                            <div className="w-4/12 px-1 flex">
-                                                <input type="radio" className="w-6/12" id="Female" value="Female" />
-                                                <label for="Female" className="text-sm text-teal-950" >Female</label>
-
-                                            </div>
-                                            <div className="w-4/12 px-1 flex">
-                                                <input type="radio" className="w-6/12" id="Other" value="Other" />
-                                                <label for="Other" className="text-sm text-teal-950" >Other</label>
-
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>  
                             </div>
 
+                            <div className="lg:w-6/12 md:px-5 w-full mx-auto  space-y-5">
 
-
-                            <div className="md:w-6/12 md:px-5 w-full mx-auto max-w-sm space-y-5">
+                                <Select id={"speciality"} labelName={"Speciality"} options={options} />
                                 
-
-                                <div>
-                                    <label className="text-sm text-gray-400">Speciality</label>
-                                    <div className="w-full inline-flex border">
-                                    <select
-                                            required
-                                            className="w-full p-2"
-                                        >
-                                            <option value="one">one</option>
-                                            <option value="two">two</option>
-                                            <option value="three">three</option>
-                                            
-                                        </select>
-                                    </div>
-                                </div>
-
-
-
-                                <div>
-                                    <label className="text-sm text-gray-400">Appointment needed</label>
-                                    <div className="w-full inline-flex border">
-                                        <select
-                                            required
-                                            className="w-full  p-2"
-                                        >
-                                            <option value="This Week">This Week</option>
-                                            <option value="Next Week">Next Week</option>
-                                            <option value="This Month">This Month</option>
-                                            <option value="Next Month">Next Month</option>
-                                            
-                                        </select>
-                                    </div>
-                                </div>
-
-
-
-                                <div>
-                                    <label className="text-sm text-gray-400">Preferred day</label>
-                                    <div className="w-full inline-flex border">
-                                        
-                                        <select
-                                            required
-                                            className="w-full  p-2"
-                                        >
-                                            <option value="Monday">Monday</option>
-                                            <option value="Tuesday">Tuesday</option>
-                                            <option value="Wednesday">Wednesday</option>
-                                            <option value="Thursday">Thursday</option>
-                                            <option value="Friday">Friday</option>
-                                            <option value="Saturday">Saturday</option>
-                                            <option value="Sunday">Sunday</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-
-
-
-                                <div>
-                                    <label className="text-sm text-gray-400">Address</label>
+                                <Select id={"app_needed"} labelName={"Appointment needed"} options={options} />
                                 
+                                <Select id={"day"} labelName={"Day preferred"} options={options} />
+
+                                <div>
+                                    <label  className="text-sm text-teal-900">Address</label>
+                                    <div className="w-full inline-flex border">
+
                                         <textarea
-                                            className="w-full  p-3 border-gray-200 overflow-hidden border-1 border"
-                                            rows={4}
+                                            className="w-full p-3 border-gray-200 overflow-hidden border-1 border"
+                                            rows={3}
                                         />
+                                    </div>
+                                    
                                 </div> 
-
-                            
                                 
                             </div>
 
-                            
                         </div>
 
+                            <button className="text-white rounded-md text-center  from-teal-700 via-teal-1 to-teal-700 bg-gradient-to-r px-16 text-md py-3 inline-flex  
+                        focus:outline-none hover:scale-105 mt-5 w-fit self-end" >Submit</button>
                         
-                    
-
-                        <button className="text-white rounded-md text-center bg-teal-1 py-2 px-10 inline-flex  
-                        focus:outline-none float-right hover:bg-teal-800 ">Submit</button>
+                    </div>
                     </div>
                 </div>
             </form>
